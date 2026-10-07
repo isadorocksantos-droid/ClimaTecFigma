@@ -1,132 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#98D8FF"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weather App"
-        android:textSize="28sp"
-        android:textColor="#6E73D7"
-        android:layout_marginBottom="40dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Latitude"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/edtLatitude"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Value"
-        android:inputType="numberDecimal|numberSigned"
-        android:backgroundTint="#6E73D7" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Longitude"
-        android:textSize="16sp"
-        android:layout_marginTop="25dp" />
-
-    <EditText
-        android:id="@+id/edtLongitude"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Value"
-        android:inputType="numberDecimal|numberSigned"
-        android:backgroundTint="#6E73D7" />
-
-    <Button
-        android:id="@+id/btnBuscar"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35dp"
-        android:text="📍  buscar"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#D24343" />
-
+    <!-- Área principal -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="65dp">
+        android:id="@+id/mainContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="24dp"
+        android:background="#98D8FF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvWeatherTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:text="Weather&#10;App"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#6155F5"
+            android:textSize="38sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Temperatura"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/txtTemperatura"
-                android:layout_width="95dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="20°C"
-                android:background="#DDDEF8"
-                android:layout_marginTop="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
+        <!-- Data -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:text="09 16 2026"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            android:layout_marginTop="8dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Umidade"
-                android:textSize="16sp" />
+        <!-- Hora -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8:24 am"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            android:layout_marginBottom="28dp" />
 
-            <TextView
-                android:id="@+id/txtUmidade"
-                android:layout_width="95dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="85%"
-                android:background="#DDDEF8"
-                android:layout_marginTop="10dp" />
+        <!-- Latitude -->
+        <EditText
+            android:id="@+id/etLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Latitude"
+            android:textColor="#F2F2F7"
+            android:textColorHint="#F2F2F7"
+            android:textSize="17sp"
+            android:singleLine="true"
+            android:inputType="numberDecimal|numberSigned"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:backgroundTint="#E6E6E6"
+            android:layout_marginBottom="10dp" />
 
-        </LinearLayout>
+        <!-- Longitude -->
+        <EditText
+            android:id="@+id/etLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Longitude"
+            android:textColor="#F2F2F7"
+            android:textColorHint="#F2F2F7"
+            android:textSize="17sp"
+            android:singleLine="true"
+            android:inputType="numberDecimal|numberSigned"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:backgroundTint="#E6E6E6"
+            android:layout_marginBottom="18dp" />
+
+        <!-- Botão pesquisar -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="91dp"
+            android:text="🔍"
+            android:textColor="#F5F5F5"
+            android:textSize="18sp"
+            android:backgroundTint="#3E7E9B"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Usar localização -->
+        <Button
+            android:id="@+id/btnLocation"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="📍  Usar minha localização"
+            android:textColor="#F3F3F3"
+            android:textSize="16sp"
+            android:backgroundTint="#032B67"
+            android:layout_marginTop="2dp" />
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="45dp"
-        android:text="Pressão Atmosférica"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/txtPressao"
-        android:layout_width="135dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="1018 hPa"
-        android:background="#DDDEF8"
-        android:layout_marginTop="10dp" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
